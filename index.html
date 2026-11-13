@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꼬마별 스튜디오 · 아기 탄생·성장 기념 맞춤 포스터</title>
+<meta name="description" content="아기 이름, 태어난 날, 키와 몸무게, 손발 도장으로 만드는 맞춤 탄생·성장 포스터. 디지털 파일, 인쇄, 액자로 1:1 주문 제작합니다.">
+<meta property="og:title" content="꼬마별 스튜디오 · 우리 아기 첫 순간을 평생 걸어두는 포스터">
+<meta property="og:description" content="아기 정보로 만드는 맞춤 탄생·성장 포스터">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#1F2A44; --dark2:#2C3858; --light:#FAF7F2; --card:#FFFEFB;
+    --ink:#1F2A44; --soft:#5B6478; --muted:#7C8496; --line:#E8E2D8;
+    --orange:#F29CB0; --orange-ink:#B03A5B; --peach:#FCE1E8;
+    --mint:#DCEBFA; --mint-ink:#2A5C8F; --lav:#FFF1C9; --lav-ink:#7A5600;
+    --radius:28px; --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--light);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .display{font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400}
+  .eyebrow{font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--orange-ink)}
+  section{padding:96px 0}
+  .sec-head{margin-bottom:48px}
+  .sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:900;line-height:1.3;margin:10px 0 12px}
+  .sec-head p{color:var(--soft);font-size:17px}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .15s ease, box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--orange);color:var(--dark);box-shadow:0 8px 20px rgba(242,156,176,.4)}
+  .btn-ghost{background:transparent;border:2px solid rgba(251,243,232,.4);color:#F6F4FB}
+  .btn-ghost.on-light{border-color:var(--line);color:var(--ink)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:rgba(31,42,68,.92);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-size:24px;color:var(--orange)}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav ul a{color:#D5DBEA;font-size:15px;font-weight:500}
+  .nav ul a:hover{color:#fff}
+  .nav .btn{padding:10px 20px;font-size:14px}
+  @media(max-width:760px){.nav ul{display:none}}
+
+  /* hero */
+  .hero{background:var(--dark);color:#F6F4FB;padding:88px 0 112px;overflow:hidden;position:relative}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.2vw,62px);line-height:1.12;margin:18px 0 22px}
+  .hero .lead{font-size:19px;color:#D5DBEA;margin-bottom:28px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+  .chip{font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px}
+  .chip.o{background:var(--peach);color:var(--orange-ink)}
+  .chip.m{background:var(--mint);color:var(--mint-ink)}
+  .chip.l{background:var(--lav);color:var(--lav-ink)}
+  .hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .hero .eyebrow{color:#F7B6C6}
+  .stage{position:relative;height:440px}
+  .blob{position:absolute;border-radius:50%}
+  .pet{position:absolute;width:200px;border-radius:28px;padding:22px;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink);box-shadow:0 18px 40px rgba(0,0,0,.25);animation:float 6s ease-in-out infinite}
+  .pet small{font-size:13px;color:#4A5168;font-weight:500}
+  .pet b{font-size:17px}
+  @keyframes float{50%{translate:0 -10px}}
+  .hero .caption{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:24px}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.stage{height:380px;max-width:460px;margin:0 auto;width:100%}}
+
+  /* problem */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .panel{background:var(--dark);color:#D5DBEA;border-radius:32px;padding:40px}
+  .panel h3{color:#F6F4FB;font-size:22px;margin-bottom:24px}
+  .panel li{list-style:none;display:flex;gap:14px;align-items:center;font-size:17px;padding:10px 0}
+  .dot{width:16px;height:16px;border-radius:50%;flex:none}
+  .answer .kicker{color:var(--orange-ink);font-weight:700;margin-bottom:8px}
+  .answer h3{font-size:clamp(26px,3.4vw,36px);font-weight:900;line-height:1.3;margin-bottom:14px}
+  .answer p{color:var(--soft);font-size:17px}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+
+  /* before after */
+  .ba-section{background:#F2EEE7}
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .ba{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .ba .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:20px}
+  .ph{aspect-ratio:1/1;border-radius:18px;background:repeating-linear-gradient(45deg,#EEE8DF,#EEE8DF 10px,#E8E2D8 10px,#E8E2D8 20px);display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;color:var(--muted);padding:8px;overflow:hidden}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .ba .arrow{color:var(--orange-ink);font-weight:900}
+  .ba p{padding:0 20px 20px;font-size:15px;color:var(--soft);text-align:center}
+  @media(max-width:860px){.ba-grid{grid-template-columns:1fr}}
+
+  /* how */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+  .step{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:32px}
+  .num{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:18px}
+  .step h3{font-size:21px;margin-bottom:8px}
+  .step p{color:var(--soft);font-size:16px}
+  .bar{margin-top:28px;background:var(--mint);color:var(--mint-ink);border-radius:20px;padding:18px;text-align:center;font-weight:700}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* products */
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .prod{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .prod .top{padding:14px 20px;font-weight:700;font-size:14px}
+  .prod .art{display:flex;justify-content:center;padding:24px 0 8px}
+  .prod .body{padding:8px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .prod h3{font-size:19px}
+  .prod .desc{color:var(--soft);font-size:15px;flex:1}
+  .prod .price{font-size:24px;font-weight:900}
+  .prod.best{border-color:var(--orange)}
+  .badge{display:inline-block;background:var(--orange);color:var(--dark);font-size:12px;font-weight:900;padding:4px 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .prod .btn{justify-content:center;padding:12px;font-size:15px;margin-top:8px}
+  .notice{margin-top:20px;font-size:14px;color:var(--muted);text-align:center}
+  @media(max-width:960px){.products{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.products{grid-template-columns:1fr}}
+
+  /* reviews */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .review{background:var(--card);border:2px dashed var(--line);border-radius:var(--radius);padding:28px;color:var(--muted);font-size:15px}
+  .review b{display:block;color:var(--ink);margin-bottom:6px}
+  @media(max-width:860px){.reviews{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq details{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:20px 24px;margin-bottom:12px}
+  .faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';color:var(--orange-ink);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:'−'}
+  .faq details p{margin-top:12px;color:var(--soft);font-size:16px}
+
+  /* cta */
+  .cta{background:var(--dark);color:#F6F4FB;text-align:center;border-radius:36px;padding:64px 24px}
+  .cta h2{font-size:clamp(30px,4.5vw,48px);line-height:1.25;margin-bottom:14px}
+  .cta p{color:#D5DBEA;margin-bottom:28px}
+  .cta .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+  /* footer */
+  footer{padding:48px 0 64px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .logo{font-size:22px;margin-bottom:12px}
+  footer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:16px 0}
+  footer dt{font-weight:700;color:var(--soft)}
+  footer .links{display:flex;gap:16px;margin-top:8px}
+  footer .links a{text-decoration:underline}
+
+  /* floating kakao */
+  .float-btn{position:fixed;right:20px;bottom:20px;z-index:30;background:#FEE500;color:#191600;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.18);font-size:15px}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!--
+  ===== 여기만 바꾸면 됩니다 =====
+  맨 아래 <script>의 CONFIG에 스마트스토어 상품 링크, 카카오톡 채널 링크,
+  사업자 정보를 넣으세요. 비어 있는 링크는 클릭 시 "준비 중" 안내가 뜹니다.
+-->
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo display" data-brand>꼬마별 스튜디오</a>
+    <ul>
+      <li><a href="#samples">작업 사례</a></li>
+      <li><a href="#how">주문 방법</a></li>
+      <li><a href="#products">상품·가격</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#products">주문하기</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">BABY MILESTONE POSTER</p>
+        <h1 class="display">우리 아기 첫 순간을,<br>평생 걸어두는 포스터</h1>
+        <p class="lead">이름, 태어난 날, 키와 몸무게, 손발 도장만 보내주세요.<br>세상에 하나뿐인 탄생 포스터로 만들어 드려요.</p>
+        <div class="chips">
+          <span class="chip o">탄생 포스터</span>
+          <span class="chip m">백일·돌 성장 포스터</span>
+          <span class="chip l">디지털 파일</span>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#products">포스터 고르기 →</a>
+          <a class="btn btn-ghost" data-link="kakao" href="#">카톡으로 상담하기</a>
+        </div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="blob" style="right:10px;top:0;width:150px;height:150px;background:var(--orange)"></div>
+        <div class="blob" style="left:0;bottom:70px;width:80px;height:80px;background:#8EC0EE"></div>
+        <div class="pet" style="left:4%;top:40px;background:var(--mint);rotate:-7deg">
+          <small>상품 02</small>
+          <svg width="110" height="110" viewBox="0 0 160 160"><path d="M96 22 A60 60 0 1 0 140 112 A48 48 0 1 1 96 22 Z" fill="#1F2A44"/><circle cx="118" cy="40" r="6" fill="#F29CB0"/></svg>
+          <b>성장 포스터</b>
+        </div>
+        <div class="pet" style="right:2%;top:30px;background:var(--lav);rotate:6deg;animation-delay:-2s">
+          <small>상품 03</small>
+          <svg width="110" height="110" viewBox="0 0 160 160"><ellipse cx="80" cy="106" rx="32" ry="44" fill="#1F2A44"/><circle cx="50" cy="52" r="10" fill="#1F2A44"/><circle cx="66" cy="38" r="10" fill="#1F2A44"/><circle cx="84" cy="33" r="10" fill="#1F2A44"/><circle cx="101" cy="38" r="9" fill="#1F2A44"/><circle cx="114" cy="50" r="8" fill="#1F2A44"/></svg>
+          <b>디지털 파일</b>
+        </div>
+        <div class="pet" style="left:30%;top:110px;background:var(--peach);rotate:2deg;animation-delay:-4s">
+          <small>상품 01</small>
+          <svg width="110" height="110" viewBox="0 0 160 160"><polygon points="80,16 96,60 142,60 105,88 119,134 80,107 41,134 55,88 18,60 64,60" fill="#1F2A44"/><circle cx="80" cy="76" r="9" fill="#F29CB0"/></svg>
+          <b>탄생 포스터</b>
+        </div>
+        <p class="caption display">정보를 보내면, 아기의 첫날이 작품이 된다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="wrap split">
+      <div class="panel">
+        <h3>이런 마음, 익숙하지 않나요?</h3>
+        <ul>
+          <li><span class="dot" style="background:var(--orange)"></span>태어난 날의 숫자를 오래 남기고 싶을 때</li>
+          <li><span class="dot" style="background:#8EC0EE"></span>백일·돌상에 놓을 기념품이 필요할 때</li>
+          <li><span class="dot" style="background:#F5D77A"></span>육아에 지쳐 직접 꾸밀 여유가 없을 때</li>
+        </ul>
+      </div>
+      <div class="answer">
+        <p class="kicker">그래서 만들었습니다.</p>
+        <h3>정보만 보내면 완성되는<br>맞춤 기념 포스터</h3>
+        <p>아기 정보 정리부터 디자인, 인쇄, 액자, 배송까지 한 번에 맡기세요. 시안을 먼저 보여드리고, 마음에 들 때 제작을 시작해요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLES -->
+  <section class="ba-section" id="samples">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">SAMPLES</p>
+        <h2>이런 포스터로 완성돼요</h2>
+        <p>실제 제작한 포스터 사진을 이곳에 넣어주세요.</p>
+      </div>
+      <div class="ba-grid">
+        <!-- 사진 넣는 법: <div class="ph">...</div> 안을 <img src="images/sample1.jpg" alt="설명"> 으로 바꾸세요.
+             아기 이름·생일이 보이는 사진은 부모님 동의를 받거나 가려서 올리세요. -->
+        <div class="ba">
+          <div class="row" style="grid-template-columns:1fr"><div class="ph" style="aspect-ratio:4/5">탄생 포스터 사진</div></div>
+          <p>탄생 포스터 · [액자 / 인쇄]</p>
+        </div>
+        <div class="ba">
+          <div class="row" style="grid-template-columns:1fr"><div class="ph" style="aspect-ratio:4/5">성장 포스터 사진</div></div>
+          <p>백일·돌 성장 포스터</p>
+        </div>
+        <div class="ba">
+          <div class="row" style="grid-template-columns:1fr"><div class="ph" style="aspect-ratio:4/5">아기방에 걸린 모습</div></div>
+          <p>[설치 사진 / 선물 포장]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>정보를 보내고, 포스터를 받아보세요</h2>
+        <p>주문은 세 단계로 끝납니다.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num" style="background:var(--peach)">01</div><h3>주문하고 정보 보내기</h3><p>포스터를 주문한 뒤, 카카오톡 채널로 이름, 태어난 날과 시간, 키·몸무게, 손발 도장 사진을 보내주세요.</p></div>
+        <div class="step"><div class="num" style="background:var(--mint)">02</div><h3>시안 확인</h3><p>디자인 시안을 카카오톡으로 보내드려요. 한 번 무료로 수정할 수 있어요.</p></div>
+        <div class="step"><div class="num" style="background:var(--lav)">03</div><h3>포스터 받기</h3><p>디지털 파일은 바로 보내드리고, 인쇄·액자는 제작 후 택배로 보내드려요.</p></div>
+      </div>
+      <p class="bar">재고 없이, 주문받은 만큼만 만드는 1:1 제작</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" style="background:#F2EEE7">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">PRODUCTS</p>
+        <h2>필요한 형태로 골라보세요</h2>
+        <p>버튼을 누르면 결제 페이지로 이동합니다.</p>
+      </div>
+      <div class="products">
+        <div class="prod">
+          <div class="top" style="background:var(--lav)">디지털 파일</div>
+          <div class="art"><svg width="90" height="90" viewBox="0 0 160 160" aria-hidden="true"><ellipse cx="80" cy="106" rx="32" ry="44" fill="#1F2A44"/><circle cx="50" cy="52" r="10" fill="#1F2A44"/><circle cx="66" cy="38" r="10" fill="#1F2A44"/><circle cx="84" cy="33" r="10" fill="#1F2A44"/><circle cx="101" cy="38" r="9" fill="#1F2A44"/><circle cx="114" cy="50" r="8" fill="#1F2A44"/></svg></div>
+          <div class="body"><h3>집에서 바로 출력</h3><p class="desc">고화질 파일(인쇄용 + SNS용)</p><p class="price" data-price="digital">15,000원</p><a class="btn btn-primary" data-link="digital" href="#">주문하기</a></div>
+        </div>
+        <div class="prod">
+          <div class="top" style="background:var(--peach)">탄생 포스터 인쇄</div>
+          <div class="art"><svg width="90" height="90" viewBox="0 0 160 160" aria-hidden="true"><polygon points="80,16 96,60 142,60 105,88 119,134 80,107 41,134 55,88 18,60 64,60" fill="#1F2A44"/><circle cx="80" cy="76" r="9" fill="#F29CB0"/></svg></div>
+          <div class="body"><h3>고급 용지에 인쇄</h3><p class="desc">원하는 액자에 직접 넣어서</p><p class="price" data-price="print">29,000원</p><a class="btn btn-primary" data-link="print" href="#">주문하기</a></div>
+        </div>
+        <div class="prod best">
+          <div class="top" style="background:var(--orange);color:var(--dark)">탄생 포스터 + 액자</div>
+          <div class="art"><svg width="90" height="90" viewBox="0 0 160 160" aria-hidden="true"><polygon points="80,16 96,60 142,60 105,88 119,134 80,107 41,134 55,88 18,60 64,60" fill="#1F2A44"/><circle cx="80" cy="76" r="9" fill="#F29CB0"/></svg></div>
+          <div class="body"><h3>바로 거는 완성품 <span class="badge">추천</span></h3><p class="desc">출산 선물 포장 옵션 가능</p><p class="price" data-price="frame">49,000원</p><a class="btn btn-primary" data-link="frame" href="#">주문하기</a></div>
+        </div>
+        <div class="prod">
+          <div class="top" style="background:var(--mint)">백일·돌 성장 포스터</div>
+          <div class="art"><svg width="90" height="90" viewBox="0 0 160 160" aria-hidden="true"><path d="M96 22 A60 60 0 1 0 140 112 A48 48 0 1 1 96 22 Z" fill="#1F2A44"/><circle cx="118" cy="40" r="6" fill="#F29CB0"/></svg></div>
+          <div class="body"><h3>첫해를 한 장에</h3><p class="desc">월별 사진 12칸 + 성장 기록</p><p class="price" data-price="growth">[가격]</p><a class="btn btn-primary" data-link="growth" href="#">주문하기</a></div>
+        </div>
+      </div>
+      <p class="notice">맞춤 제작 상품으로, 시안 확정 후 제작이 시작되면 단순 변심에 의한 취소·환불이 어렵습니다.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS (실제 후기가 생기면 교체) -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">REVIEWS</p>
+        <h2>부모님들의 이야기</h2>
+        <p>실제 주문 고객의 후기를 받으면 이곳에 채워 넣으세요.</p>
+      </div>
+      <div class="reviews">
+        <div class="review"><b>[고객 이름 / 상품]</b>[실제 후기 내용을 넣어주세요. 사진과 함께 넣으면 더 좋아요.]</div>
+        <div class="review"><b>[고객 이름 / 상품]</b>[실제 후기 내용]</div>
+        <div class="review"><b>[고객 이름 / 상품]</b>[실제 후기 내용]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap faq">
+      <div class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>자주 묻는 질문</h2>
+      </div>
+      <details><summary>어떤 정보를 보내야 하나요?</summary><p>아기 이름, 태어난 날짜와 시간, 키와 몸무게가 기본이에요. 손발 도장 사진, 태어난 병원이나 도시, 넣고 싶은 짧은 문구가 있으면 함께 보내주세요.</p></details>
+      <details><summary>손발 도장이 없어도 되나요?</summary><p>네, 도장 없이도 만들 수 있어요. 도장을 넣고 싶다면 종이에 찍은 도장을 밝은 곳에서 위에서 찍어 보내주세요.</p></details>
+      <details><summary>제작 기간은 얼마나 걸리나요?</summary><p>시안 전달까지 [ ]일, 시안 확정 후 디지털 파일은 바로, 인쇄·액자는 제작과 배송까지 [ ]일 정도 걸려요.</p></details>
+      <details><summary>시안 수정은 몇 번까지 되나요?</summary><p>1회 무료로 수정할 수 있어요. 추가 수정은 카카오톡으로 문의해 주세요.</p></details>
+      <details><summary>취소나 환불이 되나요?</summary><p>시안 확정 전에는 전액 환불해 드려요. 맞춤 제작 상품 특성상 시안 확정 후 제작이 시작되면 단순 변심에 의한 취소·환불은 어렵습니다. 인쇄 불량이나 배송 중 파손은 교환해 드려요.</p></details>
+      <details><summary>아기 정보와 사진은 어떻게 관리되나요?</summary><p>보내주신 정보는 포스터 제작에만 사용하고, 제작 완료 [ ]일 뒤 삭제해요. 작업 사례로 소개할 때는 미리 동의를 받고, 이름과 생일 등은 가리고 올립니다.</p></details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2 class="display">아기의 첫날이,<br>평생의 그림이 되도록.</h2>
+        <p>궁금한 점은 카카오톡으로 편하게 물어보세요.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#products">포스터 고르기 →</a>
+          <a class="btn btn-ghost" data-link="kakao" href="#">카톡 상담하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="logo display" data-brand>꼬마별 스튜디오</p>
+    <dl>
+      <dt>상호</dt><dd data-biz="company">[상호명]</dd>
+      <dt>대표자</dt><dd data-biz="owner">[대표자명]</dd>
+      <dt>사업자등록번호</dt><dd data-biz="bizNo">[000-00-00000]</dd>
+      <dt>통신판매업 신고번호</dt><dd data-biz="mailOrderNo">[제0000-서울○○-0000호]</dd>
+      <dt>주소</dt><dd data-biz="address">[사업장 주소]</dd>
+      <dt>고객센터</dt><dd data-biz="contact">[전화번호 / 이메일]</dd>
+    </dl>
+    <div class="links">
+      <a data-link="privacy" href="#">개인정보처리방침</a>
+      <a data-link="instagram" href="#">인스타그램</a>
+      <a data-link="kakao" href="#">카카오톡 채널</a>
+    </div>
+    <p style="margin-top:20px">© <span id="year"></span> <span data-brand>꼬마별 스튜디오</span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="float-btn" data-link="kakao" href="#">💬 카톡으로 상담하기</a>
+
+<script>
+  /* ===== 설정: 이 부분만 수정하세요 ===== */
+  const CONFIG = {
+    brand: "꼬마별 스튜디오",
+    links: {
+      digital:   "",   // 스마트스토어 디지털 파일 상품 링크
+      print:     "",   // 스마트스토어 포스터 인쇄 상품 링크
+      frame:     "",   // 스마트스토어 포스터 + 액자 상품 링크
+      growth:    "",   // 스마트스토어 성장 포스터 상품 링크
+      kakao:     "",   // 카카오톡 채널 링크 (예: https://pf.kakao.com/_xxxxx)
+      instagram: "",   // 인스타그램 주소
+      privacy:   ""    // 개인정보처리방침 페이지 링크
+    },
+    prices: { digital: "15,000원", print: "29,000원", frame: "49,000원", growth: "" },
+    business: {
+      company: "", owner: "", bizNo: "", mailOrderNo: "", address: "", contact: ""
+    }
+  };
+  /* ===================================== */
+
+  document.querySelectorAll("[data-brand]").forEach(el => el.textContent = CONFIG.brand);
+  document.querySelectorAll("[data-link]").forEach(el => {
+    const url = CONFIG.links[el.dataset.link];
+    if (url) { el.href = url; el.target = "_blank"; el.rel = "noopener"; }
+    else el.addEventListener("click", e => { e.preventDefault(); showToast("링크 준비 중이에요. 곧 열릴 예정입니다!"); });
+  });
+  document.querySelectorAll("[data-price]").forEach(el => {
+    const p = CONFIG.prices[el.dataset.price]; if (p) el.textContent = p;
+  });
+  document.querySelectorAll("[data-biz]").forEach(el => {
+    const v = CONFIG.business[el.dataset.biz]; if (v) el.textContent = v;
+  });
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function showToast(msg){
+    let t = document.getElementById("toast");
+    if (!t) {
+      t = document.createElement("div"); t.id = "toast";
+      t.style.cssText = "position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1F2A44;color:#F6F4FB;padding:14px 22px;border-radius:999px;font-size:15px;z-index:40;opacity:0;transition:opacity .2s";
+      document.body.appendChild(t);
+    }
+    t.textContent = msg; t.style.opacity = 1;
+    clearTimeout(t._h); t._h = setTimeout(() => t.style.opacity = 0, 2200);
+  }
+</script>
+</body>
+</html>
